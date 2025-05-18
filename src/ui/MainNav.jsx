@@ -6,12 +6,12 @@ function MainNav() {
       <ul className="flex list-none p-0 m-0 gap-4 px-4 py-3">
         {[
           { to: '/dashboard',  text: 'خانه' },
-          { to: '/product',  text: 'خدمات چاپ' },
-          { to: '/account',  text: 'سایت و سئو' },
-          { to: '/service',  text: 'سوشال مدیا' },
-          { to: '/service',  text: 'سوشال مدیا' },
-          { to: '/service',  text: 'سوشال مدیا' },
-          { to: '/service',  text: 'سوشال مدیا' },
+          { to: '/print-services',  text: 'خدمات چاپ' },
+          { to: '/web-design',  text: 'سایت و سئو' },
+          { to: '/social-media',  text: 'سوشال مدیا' },
+          { to: '/board',  text: 'خدمات تابلو و لیزر' },
+          { to: '/graphic-design',  text: 'طراحی گرفیک' },
+          { to: '/photography',  text: 'عکاسی و فیلمبرداری' },
         ].map((item) => (
           <li key={item.to} className="flex items-center">
             <NavLink
