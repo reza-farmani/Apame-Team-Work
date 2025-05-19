@@ -96,7 +96,7 @@ function MainNav() {
             key={item.to || item.text} 
             className="flex items-center relative"
             onMouseEnter={() => setHoveredItem(item.to || item.text)}
-            onMouseLeave={() => setHoveredItem(null)}
+            onMouseLeave={() => setTimeout(() => {setHoveredItem(null)}, 3000)}
           >
             {item.click ? (
               <NavLink
@@ -111,8 +111,8 @@ function MainNav() {
               </NavLink>
             ) : (
               <div
-                className={`flex items-center p-2 rounded cursor-default ${
-                  hoveredItem === (item.to || item.text) ? 'text-gray-800' : 'text-[#040911]'
+                className={`flex items-center p-[6px] rounded cursor-pointer duration-300 ${
+                  hoveredItem === (item.to || item.text) ? 'text-gray-800 hover:bg-[#eef4f9] rounded-2xl' : 'text-[#040911]'
                 }`}
               >
                 <span className='fontBold flex items-center justify-center pt-2 duration-300'>{item.text}</span>
