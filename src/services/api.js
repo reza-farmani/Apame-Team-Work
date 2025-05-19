@@ -44,3 +44,8 @@ export async function getCutServices() {
   const res = await fetch(`${API_URL}/cutServices`);
   return res.json();
 }
+
+export async function getMotionServices() {
+  const res = await fetch(`${API_URL}/motionServices`);
+  return res.json();
+}

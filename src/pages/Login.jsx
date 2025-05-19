@@ -43,7 +43,7 @@ function Login() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-            نام کامل
+            نام کاربری
           </label>
           <input
             id="name"
