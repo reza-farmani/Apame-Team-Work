@@ -1,6 +1,6 @@
+import { getBoardServices, getGraphicServices, getMotionServices, getPrintingServices, getShootingServices, getSocialMediaServices, getWebServices } from '../services/api';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { getBoardServices, getPrintingServices } from '../services/api';
 import { useQuery } from '@tanstack/react-query';
 
 function MainNav() {
@@ -26,6 +26,56 @@ function MainNav() {
     text: service.name,
   }));
 
+    const { data: graphicServices = [] } = useQuery({ 
+      queryKey: ['graphicservices'],
+      queryFn: getGraphicServices,
+    });
+
+  const graphicSubItems = graphicServices.map(service => ({
+     to: `${service.sub}`, 
+     text: service.name,
+   }));
+
+     const { data: shootingServices = [] } = useQuery({
+       queryKey: ['shootingservices'],
+       queryFn: getShootingServices,
+     });
+
+   const shootingSubItems = shootingServices.map(service => ({
+      to: `${service.sub}`, 
+      text: service.name,
+     }));
+
+    const { data: socialServices = [] } = useQuery({
+       queryKey: ['socialmediaservices'],
+       queryFn: getSocialMediaServices,
+    });
+
+    const socialMediaSubItems = socialServices.map(service => ({
+      to: `${service.sub}`, 
+      text: service.name,
+     }));
+
+     const { data: webServices = [] } = useQuery({
+       queryKey: ['webservices'],
+       queryFn: getWebServices,
+      });
+
+     const webSubItems = webServices.map(service => ({
+       to: `${service.sub}`, 
+       text: service.name,
+      }));
+
+     const { data: motionServices = [] } = useQuery({
+      queryKey: ['motionservices'],
+      queryFn: getMotionServices,
+      });
+
+     const motionSubItems = motionServices.map(service => ({
+       to: `${service.sub}`, 
+       text: service.name,
+      }));
+
   const navItems = [
     { 
       to: '/dashboard', 
@@ -41,14 +91,14 @@ function MainNav() {
     { 
       to: '/web-design', 
       text: 'سایت و سئو',
-      subItems: [],
-      click: true
+      subItems: webSubItems,
+      click: false
     },
     { 
       to: '/social-media', 
       text: 'سوشال مدیا',
-      subItems: [],
-      click: true
+      subItems: socialMediaSubItems,
+      click: false
     },
     { 
       text: ' تابلو و لیزر',
@@ -57,21 +107,21 @@ function MainNav() {
     },
     { 
       to: '/graphic-design', 
-      text: 'طراحی گرفیک',
-      subItems: [],
-      click: true
+      text: 'طراحی گرافیک',
+      subItems: graphicSubItems,
+      click: false
     },
     { 
       to: '/photography', 
       text: 'عکاسی و فیلمبرداری',
-      subItems: [],
-      click: true
+      subItems: shootingSubItems,
+      click: false
     },
     { 
       to: '/p', 
       text: 'موشن گرافی',
-      subItems: [],
-      click: true
+      subItems: motionSubItems,
+      click: false
     },
     { 
       to: '/ph', 
@@ -90,13 +140,13 @@ function MainNav() {
   return (
     <nav className="">
       <div className='w-[73%] h-16 rounded-b-2xl bg-[#A9C7E1] m-auto flex items-center justify-evenly'>
-      <ul className="flex list-none p-0 m-0 gap-10 px-4 py-4">
+      <ul className="flex list-none p-0 m-0 gap-7 px-4 py-4">
         {navItems.map((item) => (
           <li 
             key={item.to || item.text} 
             className="flex items-center relative"
             onMouseEnter={() => setHoveredItem(item.to || item.text)}
-            onMouseLeave={() => setTimeout(() => {setHoveredItem(null)}, 3000)}
+            onMouseLeave={() => setTimeout(() => {setHoveredItem(null)}, 3200)}
           >
             {item.click ? (
               <NavLink
