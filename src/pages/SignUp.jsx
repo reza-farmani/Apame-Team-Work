@@ -1,23 +1,25 @@
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { loginUser } from "../services/userService";
+import { addUser } from "../services/userService";
 import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
+function SignUp() {
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
- const { mutate, isPending, isError, error } = useMutation({
-  mutationFn: loginUser,
-  onSuccess: (user) => {
-    localStorage.setItem('user', JSON.stringify(user));
-    navigate("/"); 
-  },
- });
+  const { mutate, isPending, isError, error, isSuccess } = useMutation({
+    mutationFn: addUser,
+    onSuccess: () => {
+      navigate("/"); 
+      reset();
+    },
+  });
 
   function onSubmit(data) {
     mutate(data);
@@ -26,34 +28,89 @@ function Login() {
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
-        ورود به حساب کاربری
+        فرم ثبت نام
       </h2>
 
       {isError && (
         <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
-          {error.message || "خطایی در ورود رخ داده است"}
+          {error.message}
+        </div>
+      )}
+
+      {isSuccess && (
+        <div className="mb-4 p-3 bg-green-100 text-green-700 rounded-md">
+          ثبت نام با موفقیت انجام شد!
         </div>
       )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
-          <label htmlFor="emailOrPhone" className="block text-sm font-medium text-gray-700">
-            ایمیل یا شماره تلفن
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            نام کاربری
           </label>
           <input
-            id="emailOrPhone"
-            {...register("emailOrPhone", {
-              required: "وارد کردن ایمیل یا شماره تلفن الزامی است",
-              validate: (value) => {
-                const isEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value);
-                const isPhone = /^[\d]{10,15}$/.test(value);
-                return isEmail || isPhone || "لطفاً ایمیل یا شماره تلفن معتبر وارد کنید";
+            id="name"
+            {...register("name", {
+              required: "نام الزامی است",
+              minLength: {
+                value: 2,
+                message: "نام باید حداقل ۲ کاراکتر باشد"
               }
             })}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           />
-          {errors.emailOrPhone && (
-            <p className="mt-1 text-sm text-red-600">{errors.emailOrPhone.message}</p>
+          {errors.name && (
+            <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            ایمیل
+          </label>
+          <input
+            id="email"
+            type="email"
+            {...register("email", {
+              required: "ایمیل الزامی است",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "ایمیل معتبر نیست"
+              }
+            })}
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          />
+          {errors.email && (
+            <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+            شماره تلفن
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            {...register("phone", {
+              required: "شماره تلفن الزامی است",
+              minLength: {
+                value: 10,
+                message: "شماره تلفن باید حداقل ۱۰ رقم باشد"
+              },
+              maxLength: {
+                value: 15,
+                message: "شماره تلفن باید حداکثر ۱۵ رقم باشد"
+              },
+              pattern: {
+                value: /^\d+$/,
+                message: "شماره تلفن باید فقط شامل اعداد باشد"
+              }
+            })}
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          />
+          {errors.phone && (
+            <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
           )}
         </div>
 
@@ -108,36 +165,28 @@ function Login() {
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   ></path>
                 </svg>
-                در حال ورود...
+                در حال ثبت...
               </>
             ) : (
-              "ورود"
+              "ثبت نام"
             )}
           </button>
         </div>
       </form>
 
-      <div className="mt-4 text-center flex items-center justify-center">
+      <div className="mt-4 text-center">
         <p className="text-sm text-gray-600">
-          حساب کاربری ندارید؟{" "}
-              </p>
-          <div className=" flex items-center justify-center gap-4">
+          قبلاً حساب کاربری ساخته‌اید؟{" "}
           <Link
-            to="/signup"
-            className="font-medium text-indigo-600 hover:text-indigo-500 mr-1"
-            >
-            ثبت نام
-          </Link>
-            <Link
-            to="/signup"
+            to="/login"
             className="font-medium text-indigo-600 hover:text-indigo-500"
-            >
-            فراموشی رمز عبور
+          >
+            ورود
           </Link>
-          </div>
+        </p>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;

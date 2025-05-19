@@ -3,8 +3,6 @@ import './index.css';
 import Dashboard from './pages/Dashboard';
 import Account from './pages/Account';
 import About from './pages/About';
-import Product from './pages/Product';
-import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import AppLayout from './ui/AppLayout';
 import Service from './ui/Service';
@@ -18,6 +16,8 @@ import Lazer from './features/board/Lazer';
 import Graphic from './ui/Graphic';
 import Shooting from './ui/Shooting';
 import Cut from './features/board/Cut';
+import Login from './pages/Login';
+import SignUp from './pages/signUp';
 
 const queryClient = new QueryClient();
 
@@ -31,7 +31,8 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/account" element={<Account />} />
             <Route path="/about" element={<About />} />
-            <Route path="/product" element={<Product />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/service" element={<Service />} />
             <Route path="/print-services" element={<Print />} />
             <Route path="/offset-services" element={<Offset />} />
@@ -43,7 +44,6 @@ function App() {
             <Route path="/graphic-design" element={<Graphic />} />
             <Route path="/photography" element={<Shooting />} />
           </Route>
-          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
