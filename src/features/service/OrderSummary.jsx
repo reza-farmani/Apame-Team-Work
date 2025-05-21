@@ -17,7 +17,6 @@
           
           {formValues.variant && (
             <div className="flex justify-between">
-              <span>واریانت:</span>
               <span>{formValues.variant}</span>
             </div>
           )}

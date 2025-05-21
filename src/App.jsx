@@ -12,7 +12,7 @@ import Lazer from './features/board/Lazer';
 import Cut from './features/board/Cut';
 import Login from './pages/Login';
 import SignUp from './pages/signUp';
-import OrderForm from './pages/Order';
+import Order from './pages/Order';
 //import Print from './ui/Print';
 //import Web from './ui/Web';
 //import SocialMedia from './ui/SocialMedia';
@@ -38,7 +38,7 @@ function App() {
             <Route path="/offset-services" element={<Offset />} />
             <Route path="/lazer-services" element={<Lazer />} />
             <Route path="/cut-services" element={<Cut />} />
-            <Route path="/order" element={<OrderForm />} />
+            <Route path="/order" element={<Order />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
