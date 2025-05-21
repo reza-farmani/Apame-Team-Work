@@ -3,7 +3,7 @@
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-bold">ویژگی‌های سفارش</h3>
+      <h3 className="text-lg font-bold">جزئیات</h3>
       
       {Array.isArray(attributes) ? (
         attributes.map((attr, idx) => (
