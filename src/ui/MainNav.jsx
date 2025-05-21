@@ -89,7 +89,6 @@ function MainNav() {
       click: false
     },
     { 
-      to: '/web-design', 
       text: 'سایت و سئو',
       subItems: webSubItems,
       click: false
@@ -106,13 +105,11 @@ function MainNav() {
       click: false
     },
     { 
-      to: '/graphic-design', 
       text: 'طراحی گرافیک',
       subItems: graphicSubItems,
       click: false
     },
     { 
-      to: '/photography', 
       text: 'عکاسی و فیلمبرداری',
       subItems: shootingSubItems,
       click: false

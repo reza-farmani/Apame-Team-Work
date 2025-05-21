@@ -5,7 +5,6 @@ import Account from './pages/Account';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import AppLayout from './ui/AppLayout';
-import Service from './ui/Service';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Offset from './features/prints/Offset';
 import Lazer from './features/board/Lazer';
@@ -13,6 +12,7 @@ import Cut from './features/board/Cut';
 import Login from './pages/Login';
 import SignUp from './pages/signUp';
 import Order from './pages/Order';
+import VisitCard from './features/prints/offsetsub/VisiteCard';
 //import Print from './ui/Print';
 //import Web from './ui/Web';
 //import SocialMedia from './ui/SocialMedia';
@@ -34,8 +34,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/service" element={<Service />} />
             <Route path="/offset-services" element={<Offset />} />
+            <Route path="/visitcard" element={<VisitCard />} />
             <Route path="/lazer-services" element={<Lazer />} />
             <Route path="/cut-services" element={<Cut />} />
             <Route path="/order" element={<Order />} />
