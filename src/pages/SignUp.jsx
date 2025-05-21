@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { addUser } from "../services/userService";
+import { addUser } from "../server/services/userService";
 import { Link, useNavigate } from "react-router-dom";
 
-function SignUp() {
+function SignUp({ onSwitchToLogin, onClose }) {
   const navigate = useNavigate();
 
   const {
@@ -18,14 +18,20 @@ function SignUp() {
     onSuccess: () => {
       navigate("/"); 
       reset();
+      onClose();
     },
   });
+
+    function toLogin() {
+    onSwitchToLogin();
+  }
 
   function onSubmit(data) {
     mutate(data);
   }
 
   return (
+
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
         فرم ثبت نام
@@ -79,7 +85,7 @@ function SignUp() {
               }
             })}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-          />
+            />
           {errors.email && (
             <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
           )}
@@ -108,7 +114,7 @@ function SignUp() {
               }
             })}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-          />
+            />
           {errors.phone && (
             <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
           )}
@@ -178,7 +184,7 @@ function SignUp() {
         <p className="text-sm text-gray-600">
           قبلاً حساب کاربری ساخته‌اید؟{" "}
           <Link
-            to="/login"
+            onClick={toLogin}
             className="font-medium text-indigo-600 hover:text-indigo-500"
           >
             ورود
@@ -186,6 +192,7 @@ function SignUp() {
         </p>
       </div>
     </div>
+
   );
 }
 

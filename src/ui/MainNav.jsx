@@ -1,4 +1,4 @@
-import { getBoardServices, getGraphicServices, getMotionServices, getPrintingServices, getShootingServices, getSocialMediaServices, getWebServices } from '../services/api';
+import { getBoardServices, getGraphicServices, getMotionServices, getPrintingServices, getShootingServices, getSocialMediaServices, getWebServices } from '../server/services/api';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';

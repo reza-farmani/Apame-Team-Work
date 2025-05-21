@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { getLazerServices } from "../../services/api";
 import Spinner from "../../ui/Spinner";
+import { getLazerServices } from "../../server/services/api";
 
 
 function Lazer() {
 
-     const {
+   const {
     data: lazerServices,
     isLoading,
     error,

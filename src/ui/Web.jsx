@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+/*import { useQuery } from "@tanstack/react-query";
 import { getWebServices } from "../services/api";
 import Spinner from "./Spinner";
 
@@ -43,4 +43,4 @@ function Web() {
   );
 }
 
-export default Web;
+export default Web;*/

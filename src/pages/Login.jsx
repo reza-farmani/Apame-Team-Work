@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { loginUser } from "../services/userService";
+import { loginUser } from "../server/services/userService";
 import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ onSwitchToSignup, onClose }) {
   const navigate = useNavigate();
   const {
     register,
@@ -16,8 +16,13 @@ function Login() {
   onSuccess: (user) => {
     localStorage.setItem('user', JSON.stringify(user));
     navigate("/"); 
+    onClose();
   },
  });
+
+   function toSignup() {
+    onSwitchToSignup();
+  }
 
   function onSubmit(data) {
     mutate(data);
@@ -124,7 +129,7 @@ function Login() {
               </p>
           <div className=" flex items-center justify-center gap-4">
           <Link
-            to="/signup"
+            onClick={toSignup}
             className="font-medium text-indigo-600 hover:text-indigo-500 mr-1"
             >
             ثبت نام

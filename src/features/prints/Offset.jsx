@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getOffset } from "../../services/api";
 import Spinner from "../../ui/Spinner";
+import { getOffset } from "../../server/services/api";
 
 
 function Offset() {
