@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+/*import { useQuery } from "@tanstack/react-query";
 import { getGraphicServices } from "../services/api";
 import Spinner from "./Spinner";
 
@@ -43,4 +43,4 @@ function Graphic() {
   );
 }
 
-export default Graphic;
+export default Graphic;*/
