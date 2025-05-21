@@ -29,41 +29,22 @@
       "password": "mohamad"
     }
   ],
-    "services": [
+      "services": [
     {
-      "id": "1",
-      "name": "چاپ",
-      "sub": "offset-services"
-    },
-    {
-      "id": "2",
-      "name": "سایت و سئو",
-      "sub": "digprint-services"
-    },
-    {
-      "id": "3",
-      "name": "سوشیال مدیا",
-      "sub": "flexo-services"
-    },
-    {
-      "id": "4",
-      "name": "تابلو و لیزر",
-      "sub": "sublimition-services"
-    },
-    {
-      "id": "5",
+      "id": 1,
       "name": "طراحی گرافیک",
-      "sub": "print-services"
+      "subServices": [
+        {"id": 101, "name": "لوگو", "options": ["ساده", "پیشرفته"]},
+        {"id": 102, "name": "بنر", "options": ["کوچک", "بزرگ"]}
+      ]
     },
     {
-      "id": "6",
-      "name": "عکاسی و فیلم برداری",
-      "sub": "silk-services"
-    },
-    {
-      "id": "7",
-      "name": "موشن گرافی",
-      "sub": "parde-services"
+      "id": 2,
+      "name": "توسعه وب",
+      "subServices": [
+        {"id": 201, "name": "فرانت‌اند", "options": ["React", "Vue"]},
+        {"id": 202, "name": "بک‌اند", "options": ["Node.js", "Django"]}
+      ]
     }
   ],
   "printingServices": [
@@ -559,5 +540,166 @@
       "id": "7",
       "name": "موشن گرافیک سه بعدی"
     }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "خدمات چاپ",
+      "services": [
+        {
+          "id": 101,
+          "name": "چاپ تراکت",
+          "basePrice": 100000,
+          "fields": [
+            {
+              "name": "size",
+              "label": "سایز",
+              "type": "select",
+              "options": [
+                {"value": "A4", "label": "A4"},
+                {"value": "A5", "label": "A5"}
+              ]
+            },
+            {
+              "name": "quantity",
+              "label": "تعداد",
+              "type": "number"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "خدمات دیجیتال",
+      "services": [
+        {
+          "id": 201,
+          "name": "طراحی سایت",
+          "basePrice": 5000000,
+          "fields": [
+            {
+              "name": "pages",
+              "label": "تعداد صفحات",
+              "type": "number"
+            },
+            {
+              "name": "designType",
+              "label": "نوع طراحی",
+              "type": "select",
+              "options": [
+                {"value": "basic", "label": "پایه"},
+                {"value": "premium", "label": "پرمیوم"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+ "products": [
+    {
+      "id": 1,
+      "productName": "بگ کرافت خام",
+      "productImage": "351-1.jpg",
+      "productCode": "bag-010",
+      "productPrice": [
+        {
+          "quantity": 50,
+          "price": 320000
+        }
+      ],
+      "productAttributes": {
+        "width": 17,
+        "depth": 7,
+        "height": 25
+      }
+    },
+    {
+      "id": 2,
+      "productName": "بگ گلاسه سفید",
+      "productImage": "352-1.jpg",
+      "productCode": "bag-013",
+      "productPrice": [
+        {
+          "quantity": 50,
+          "price": 790000
+        }
+      ],
+      "productAttributes": {
+        "width": 24,
+        "depth": 10,
+        "height": 36
+      }
+    },
+    {
+      "id": 3,
+      "productName": "بیلبورد یک طرفه",
+      "productImage": "بلیبورد یک طرفه.jpg",
+      "productCode": "billboard-001",
+      "productDescription": "برای اطلاع از نحوه رزرو و نصب تماس بگیرید!"
+    },
+    {
+      "id": 4,
+      "productName": "جعبه شیرینی یک تیکه کرافت",
+      "productImage": "جعبه شیرینی یک تیکه کرافت.png",
+      "productAttributes": [
+        {
+          "name": "width",
+          "value": 20
+        },
+        {
+          "name": "depth",
+          "value": 7
+        },
+        {
+          "name": "height",
+          "value": 15
+        }
+      ],
+      "productPrice": [
+        {
+          "quantity": 10,
+          "price": 15900
+        },
+        {
+          "quantity": 100,
+          "price": 16900
+        }
+      ],
+      "productDescription": "مناسب حدود 750 گرم شیرینی خشک /با پنجره و بدون پنجره"
+    },
+    {
+      "id": 5,
+      "productName": "بروشور 2 لت 80 گرم تا شده",
+      "productCode": "brochure-001",
+      "productImage": "10081.png",
+      "productAttributes": [
+        {
+          "name": "material",
+          "value": "تحریر"
+        },
+        {
+          "name": "weight",
+          "value": 80
+        },
+        {
+          "name": "lat",
+          "value": 2
+        }
+      ],
+      "productVariants": [
+        {
+          "variant": "A5",
+          "prices": [
+            {
+              "quantity": 1000,
+              "price": 2200000
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
+

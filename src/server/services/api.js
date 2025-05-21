@@ -54,3 +54,8 @@ export async function getServices() {
   const res = await fetch(`${API_URL}/services`);
   return res.json();
 }
+
+export async function getProducts() {
+  const res = await fetch(`${API_URL}/products`);
+  return res.json();
+}
