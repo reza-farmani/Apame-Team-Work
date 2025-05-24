@@ -1,15 +1,13 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; 
 import Logo from '../assets/logo.png';
-import SignUp from "../pages/signUp";
-import Login from "../pages/Login"; 
 import MainNav from "./MainNav";
 
 function Header() {
-    const [activeForm, setActiveForm] = useState(null); 
+    const navigate = useNavigate(); 
 
-    function toggleForm(formType) {
-        setActiveForm(activeForm === formType ? null : formType);
+    function handleSignupClick() {
+        navigate('/signup'); 
     };
 
     return (
@@ -34,7 +32,7 @@ function Header() {
                             whileInView={{ opacity: 1, x: 0 }} 
                             viewport={{ once: true }} 
                             transition={{ duration: 0.8, delay: 0.2 }} 
-                            onClick={() => toggleForm('signup')} 
+                            onClick={handleSignupClick} 
                             className="btn">
                             ثبت نام / ورود
                         </motion.button>
@@ -42,20 +40,6 @@ function Header() {
                 </div>
                 <MainNav />
             </header>
-
-            {activeForm === 'signup' && (
-                <SignUp 
-                    onSwitchToLogin={() => setActiveForm('login')}
-                    onClose={() => setActiveForm(null)}
-                />
-            )}
-            
-            {activeForm === 'login' && (
-                <Login 
-                    onSwitchToSignup={() => setActiveForm('signup')}
-                    onClose={() => setActiveForm(null)}
-                />
-            )}
         </>
     )
 }
