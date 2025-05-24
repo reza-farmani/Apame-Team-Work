@@ -143,7 +143,7 @@ function MainNav() {
             key={item.to || item.text} 
             className="flex items-center relative"
             onMouseEnter={() => setHoveredItem(item.to || item.text)}
-            onMouseLeave={() => setTimeout(() => {setHoveredItem(null)}, 3200)}
+            onMouseLeave={() => setHoveredItem(null)}
           >
             {item.click ? (
               <NavLink

@@ -34,8 +34,9 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/offset-services" element={<Offset />} />
-            <Route path="/visitcard" element={<VisitCard />} />
+            <Route path="/offset-services" element={<Offset />}>
+              <Route path='101' element={<VisitCard />} />
+            </Route>
             <Route path="/lazer-services" element={<Lazer />} />
             <Route path="/cut-services" element={<Cut />} />
             <Route path="/order" element={<Order />} />

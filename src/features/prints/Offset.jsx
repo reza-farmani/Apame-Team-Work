@@ -1,37 +1,39 @@
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../ui/Spinner";
+import { useNavigate } from 'react-router-dom';
 import { getOffset } from "../../server/services/api";
 
-
 function Offset() {
+  const navigate = useNavigate();
 
-     const {
-    data: offsetPrints,
+  const {
+    data: services,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['offsetservices'],
+    queryKey: ['offsetServices'],
     queryFn: getOffset,
   });
 
   if (isLoading) return <Spinner />;
-  if (error)
-    return (
-      <div className="text-center py-10 text-red-500">
-        خطا در دریافت داده‌ها
-      </div>
-    );
+  if (error) return <div className="text-center py-10 text-red-500">خطا در دریافت خدمات</div>;
+
+  const handleServiceClick = (service) => {
+    navigate(`/offset-services/${service.id}`);
+  };
 
   return (
     <div className="p-4">
-      <div className="flex flex-wrap gap-3">
-        {offsetPrints?.map((service) => (
-          <button 
+      <h1 className="text-2xl font-bold mb-6">خدمات چاپ افست</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {services?.map((service) => (
+          <div
             key={service.id}
-            className="bg-gray-100 px-4 py-2 rounded-lg"
+            onClick={() => handleServiceClick(service)}
+            className="bg-white p-4 rounded-lg shadow hover:shadow-md transition cursor-pointer"
           >
-            {service.name}
-          </button>
+            <h3 className="font-semibold text-lg">{service.name}</h3>
+          </div>
         ))}
       </div>
     </div>
