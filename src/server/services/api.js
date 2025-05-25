@@ -61,6 +61,7 @@ export async function getProducts() {
 }
 
 export async function getVisitCard() {
-  const res = await fetch(`${API_URL}/visitCard`);
+  const res = await fetch(`${API_URL}/visitcard`);
   return res.json();
 }
+

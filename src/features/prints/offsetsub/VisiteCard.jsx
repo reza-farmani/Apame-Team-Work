@@ -1,37 +1,34 @@
 import { useQuery } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
 import { getVisitCard } from "../../../server/services/api";
 import Spinner from "../../../ui/Spinner";
 
-
 function VisitCard() {
+  const { optionId } = useParams();
 
-     const {
-    data: visitCard,
+  const {
+    data: options,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['visitcard'],
-    queryFn: getVisitCard,
+    queryKey: ['visitCard', optionId],
+    queryFn: getVisitCard(optionId),
   });
 
   if (isLoading) return <Spinner />;
-  if (error)
-    return (
-      <div className="text-center py-10 text-red-500">
-        خطا در دریافت داده‌ها
-      </div>
-    );
+  if (error) return <div className="text-center py-10 text-red-500">خطا در دریافت گزینه‌ها</div>;
 
   return (
     <div className="p-4">
-      <div className="flex flex-wrap gap-3">
-        {visitCard?.map((service) => (
-          <button 
-            key={service.id}
-            className="bg-gray-100 px-4 py-2 rounded-lg"
+      <h2 className="text-xl font-bold mb-6">گزینه‌های کارت ویزیت</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {options?.map((option) => (
+          <div
+            key={option.id}
+            className="bg-white p-4 rounded-lg shadow hover:shadow-md transition"
           >
-            {service.name}
-          </button>
+            <h3 className="font-semibold text-lg">{option.name}</h3>
+          </div>
         ))}
       </div>
     </div>
