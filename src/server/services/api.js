@@ -44,3 +44,23 @@ export async function getCutServices() {
   const res = await fetch(`${API_URL}/cutServices`);
   return res.json();
 }
+
+export async function getMotionServices() {
+  const res = await fetch(`${API_URL}/motionServices`);
+  return res.json();
+}
+
+export async function getServices() {
+  const res = await fetch(`${API_URL}/services`);
+  return res.json();
+}
+
+export async function getProducts() {
+  const res = await fetch(`${API_URL}/products`);
+  return res.json();
+}
+
+export async function getVisitCard() {
+  const res = await fetch(`${API_URL}/visitCard`);
+  return res.json();
+}

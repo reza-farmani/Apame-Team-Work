@@ -3,21 +3,22 @@ import './index.css';
 import Dashboard from './pages/Dashboard';
 import Account from './pages/Account';
 import About from './pages/About';
-import Product from './pages/Product';
-import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import AppLayout from './ui/AppLayout';
-import Service from './ui/Service';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Print from './ui/Print';
 import Offset from './features/prints/Offset';
-import Web from './ui/Web';
-import SocialMedia from './ui/SocialMedia';
-import Board from './ui/Board';
 import Lazer from './features/board/Lazer';
-import Graphic from './ui/Graphic';
-import Shooting from './ui/Shooting';
 import Cut from './features/board/Cut';
+import Login from './pages/Login';
+import SignUp from './pages/signUp';
+import Order from './pages/Order';
+import VisitCard from './features/prints/offsetsub/VisiteCard';
+//import Print from './ui/Print';
+//import Web from './ui/Web';
+//import SocialMedia from './ui/SocialMedia';
+//import Board from './ui/Board';
+//import Graphic from './ui/Graphic';
+//import Shooting from './ui/Shooting';
 
 const queryClient = new QueryClient();
 
@@ -31,19 +32,15 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/account" element={<Account />} />
             <Route path="/about" element={<About />} />
-            <Route path="/product" element={<Product />} />
-            <Route path="/service" element={<Service />} />
-            <Route path="/print-services" element={<Print />} />
-            <Route path="/offset-services" element={<Offset />} />
-            <Route path="/web-design" element={<Web />} />
-            <Route path="/social-media" element={<SocialMedia />} />
-            <Route path="/board" element={<Board />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/offset-services" element={<Offset />}>
+              <Route path='101' element={<VisitCard />} />
+            </Route>
             <Route path="/lazer-services" element={<Lazer />} />
             <Route path="/cut-services" element={<Cut />} />
-            <Route path="/graphic-design" element={<Graphic />} />
-            <Route path="/photography" element={<Shooting />} />
+            <Route path="/order" element={<Order />} />
           </Route>
-          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

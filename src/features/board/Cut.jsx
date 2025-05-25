@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCutServices } from "../../services/api";
 import Spinner from "../../ui/Spinner";
+import { getCutServices } from "../../server/services/api";
 
 
 function Cut() {

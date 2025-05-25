@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+/*import { useQuery } from "@tanstack/react-query";
 import { getBoardServices } from "../services/api";
 import Spinner from "./Spinner";
 import { useNavigate } from "react-router-dom";
@@ -55,4 +55,4 @@ function Board() {
   );
 }
 
-export default Board;
+export default Board;*/
