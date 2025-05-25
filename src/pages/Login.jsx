@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaUserTie } from "react-icons/fa";
 import { IoIosUnlock } from "react-icons/io";
-import { IoClose } from "react-icons/io5";
+import { GiExitDoor } from "react-icons/gi";
 
 /* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
 
@@ -34,6 +34,10 @@ function Login({ onClose }) {
     mutate(data);
   }
 
+  function handelClose() {
+    window.location.href = "/dashboard";
+  }
+
   return (
     <section className='flex justify-center items-center min-h-screen bg-sky-100 w-full h-[100vh] absolute top-0'>
       <div className='relative bg-white w-[580px] h-96 box-shadow rounded-3xl overflow-hidden' id='login'>
@@ -50,9 +54,6 @@ function Login({ onClose }) {
               transition={{ duration: 0.8}} 
               className='w-1/2 h-full absolute bg-[#a2c2dd] flex justify-center space-y-4 flex-col items-center text-center rounded-[150px] z-[2] left-0'
             >
-              <button className="absolute bg-gray-400 mr-[86%] mt-[-112.5%] rounded-tl-3xl rounded-br-lg w-10 h-10 flex items-center justify-center">
-              <IoClose className="text-2xl"/>
-              </button>
               <motion.h1 
                 initial={{opacity: 0, x: -100}} 
                 animate={{opacity: 1, x: 0}} 
@@ -199,6 +200,11 @@ function Login({ onClose }) {
                 "ورود به حساب"
               )}
             </motion.button>
+
+            <div className="flex absolute mt-[13%] mr-[26%]">
+              <p className="modamFont text-[13px] text-gray-500 cursor-pointer hover:text-red-900 duration-300" onClick={handelClose}>خروج از صفحه ورود</p>
+              <GiExitDoor className="text-gray-700"/>
+            </div>
           </form>
         </div>
       </div>
