@@ -4,13 +4,18 @@ import { loginUser } from "../server/services/userService";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaUserTie } from "react-icons/fa";
-import { IoIosUnlock } from "react-icons/io";
+import { CiUnread, CiRead } from "react-icons/ci";
 import { GiExitDoor } from "react-icons/gi";
+import { useState } from "react";
 
 /* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
 
 function Login({ onClose }) {
+
   const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -25,6 +30,10 @@ function Login({ onClose }) {
       onClose();
     },
   });
+
+  const handelShow = () => {
+    setShowPassword(!showPassword);
+  }
 
   function toSignup() {
     navigate("/signup"); 
@@ -137,7 +146,7 @@ function Login({ onClose }) {
               className='mb-[30px] mt-[10px] relative'
             >
               <input 
-                type="password" 
+                type={showPassword ? "text" : "password"} 
                 className='w-full p-[13px] bg-stone-100 rounded-xl text-sm modamFont' 
                 placeholder='رمز ورود'
                 {...register("password", {
@@ -148,7 +157,9 @@ function Login({ onClose }) {
                   }
                 })}
               />
-              <IoIosUnlock className="absolute mt-[-12%] text-xl text-zinc-400 mr-[87.5%]"/>
+              <button className="absolute text-2xl  left-[4%] top-[25%] text-zinc-500 cursor-pointer z-10" onClick={handelShow}>
+                {showPassword ? <CiRead /> : <CiUnread />}
+              </button>
               {errors.password && (
                 <p className="text-red-500 text-xs mt-1 modamFont">{errors.password.message}</p>
               )}
