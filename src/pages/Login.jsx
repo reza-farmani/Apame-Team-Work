@@ -3,6 +3,10 @@ import { useMutation } from "@tanstack/react-query";
 import { loginUser } from "../server/services/userService";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion'
+import { FaUserTie } from "react-icons/fa";
+import { IoIosUnlock } from "react-icons/io";
+
+/* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
 
 function Login({ onClose }) {
   const navigate = useNavigate();
@@ -30,26 +34,26 @@ function Login({ onClose }) {
   }
 
   return (
-    <section className='flex justify-center items-center min-h-screen bg-sky-100'>
+    <section className='flex justify-center items-center min-h-screen bg-sky-100 w-full h-[100vh] absolute top-0'>
       <div className='relative bg-white w-[580px] h-96 box-shadow rounded-3xl overflow-hidden' id='login'>
         <AnimatePresence>
           <motion.div 
-            initial={{opacity: 0, width: '0%'}} 
-            animate={{ opacity: 1, width: '100%' }} 
-            transition={{ duration: 0.8}} 
-            className="absolute w-full h-full before:content-[''] before:absolute before:right-[-250%] before:w-[300%] before:h-full before:bg-[#a2c2dd] before:rounded-[150px] before:z-[1]"
-          >
+              initial={{opacity: 0, width: '0%'}}
+              animate={{ opacity: 1, width: '100%' }} 
+              transition={{ duration: 0.8}} 
+              className=" absolute w-full h-full before:content-[''] before:absolute before:left-[-250%] before:w-[300%] before:h-full before:bg-[#a2c2dd] before:rounded-[150px] before:z-[2]">
+          
             <motion.div 
               initial={{opacity: 0, width: '0%'}} 
               animate={{ opacity: 1, width: '50%'}} 
               transition={{ duration: 0.8}} 
-              className='w-1/2 h-full absolute bg-[#a2c2dd] flex justify-center space-y-4 flex-col items-center text-center rounded-[150px] z-[1] left-0'
+              className='w-1/2 h-full absolute bg-[#a2c2dd] flex justify-center space-y-4 flex-col items-center text-center rounded-[150px] z-[2] left-0'
             >
               <motion.h1 
                 initial={{opacity: 0, x: -100}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1 }} 
-                className="text-2xl font-bold text-[#ffffff] text-shadow"
+                className="text-2xl modamFont text-[#ffffff] text-shadow"
               >
                 بازم برگشتی ؟
               </motion.h1>
@@ -57,7 +61,7 @@ function Login({ onClose }) {
                 initial={{opacity: 0, x: -100}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1.2 }}  
-                className="mb-[20px] text-[#44505a] text-sm"
+                className="mb-[20px] text-[#44505a] text-sm modamFont"
               >
                 حساب کاربری ندارید؟
               </motion.p>
@@ -65,7 +69,7 @@ function Login({ onClose }) {
                 initial={{opacity: 0, x: -100}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1.4}} 
-                className='cursor-pointer text-[#eaebf4] py-1 px-[40px] rounded-lg bg-[#1b4fbfcb] hover:bg-green-500 duration-300' 
+                className='cursor-pointer text-[#eaebf4] py-1 px-[40px] rounded-lg modamFont bg-[#1b4fbfcb] hover:bg-green-500 duration-300' 
                 onClick={toSignup}
               >
                 ثبت نام
@@ -80,7 +84,7 @@ function Login({ onClose }) {
               initial={{opacity: 0, x: 50}} 
               animate={{opacity: 1, x: 0}} 
               transition={{ duration: 0.6, delay: 1.6}} 
-              className='text-2xl font-bold mb-[-10] mt-[-10] mx-0 text-[#364a68]'
+              className='text-2xl modamFont mb-[-10] mt-[-10] mx-0 text-[#364a68]'
             >
               ورود
             </motion.h1>
@@ -90,7 +94,7 @@ function Login({ onClose }) {
                 initial={{opacity: 0, x: 50}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1.7}}
-                className="text-red-500 text-sm mb-2"
+                className="text-red-500 text-sm mb-2 modamFont"
               >
                 {error.message || "خطایی در ورود رخ داده است"}
               </motion.div>
@@ -104,7 +108,7 @@ function Login({ onClose }) {
             >
               <input 
                 type="text" 
-                className='w-full p-[13px] bg-stone-100 rounded-xl border-0 text-sm font-bold'  
+                className='w-full p-[13px] bg-stone-100 rounded-xl border-0 text-sm modamFont'  
                 placeholder='ایمیل یا شماره تلفن'
                 {...register("emailOrPhone", {
                   required: "وارد کردن ایمیل یا شماره تلفن الزامی است",
@@ -115,9 +119,9 @@ function Login({ onClose }) {
                   }
                 })}
               />
-              <i className='fa-solid fa-user absolute right-[20px] bg-stone-100 top-1/3 text-zinc-400 text-sm'></i>
+              <FaUserTie className="absolute mt-[-12%] text-lg text-zinc-400 mr-[87.5%]"/>
               {errors.emailOrPhone && (
-                <p className="text-red-500 text-xs mt-1">{errors.emailOrPhone.message}</p>
+                <p className="text-red-500 text-xs mt-1 modamFont">{errors.emailOrPhone.message}</p>
               )}
             </motion.div>
 
@@ -129,7 +133,7 @@ function Login({ onClose }) {
             >
               <input 
                 type="password" 
-                className='w-full p-[13px] bg-stone-100 rounded-xl text-sm font-bold' 
+                className='w-full p-[13px] bg-stone-100 rounded-xl text-sm modamFont' 
                 placeholder='رمز ورود'
                 {...register("password", {
                   required: "رمز عبور الزامی است",
@@ -139,9 +143,9 @@ function Login({ onClose }) {
                   }
                 })}
               />
-              <i className='fa-solid fa-lock absolute bg-stone-100 right-[20px] top-1/3 text-zinc-400 text-sm'></i>
+              <IoIosUnlock className="absolute mt-[-12%] text-xl text-zinc-400 mr-[87.5%]"/>
               {errors.password && (
-                <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>
+                <p className="text-red-500 text-xs mt-1 modamFont">{errors.password.message}</p>
               )}
             </motion.div>
 
@@ -151,7 +155,7 @@ function Login({ onClose }) {
               transition={{ duration: 0.6, delay: 2}} 
               className='mt-[-25px] mb-[15px]'
             >
-              <Link to="/forgot-password" className='decoration-0 text-[#104f6f] hover:text-[#89a4ad] duration-300 text-sm'>
+              <Link to="/forgot-password" className='decoration-0 text-[#104f6f] hover:text-[#89a4ad] duration-300 text-sm modamFont'>
                 فراموشی رمز عبور
               </Link>
             </motion.div>
@@ -166,7 +170,7 @@ function Login({ onClose }) {
               {isPending ? (
                 <>
                   <svg
-                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block"
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block modamFont"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"

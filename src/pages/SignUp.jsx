@@ -3,6 +3,13 @@ import { useMutation } from "@tanstack/react-query";
 import { addUser } from "../server/services/userService";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
+import { MdOutlineMailOutline } from "react-icons/md";
+import { FaUserTie } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
+import { IoIosUnlock } from "react-icons/io";
+
+/* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
+
 
 function SignUp({ onClose }) {
   const navigate = useNavigate();
@@ -31,26 +38,26 @@ function SignUp({ onClose }) {
   }
 
   return (
-    <section className='flex justify-center items-center min-h-screen bg-sky-100'>
-      <div className='relative bg-white w-[580px] h-[500px] box-shadow rounded-3xl overflow-hidden' id='signup'>
+    <section className='flex justify-center items-center min-h-screen bg-sky-100 w-full h-[100vh] absolute top-0'>
+      <div className='relative bg-white w-[700px] h-[500px] box-shadow rounded-3xl overflow-hidden' id='signup'>
         <AnimatePresence>
           <motion.div 
             initial={{opacity: 0, width: '0%'}} 
             animate={{ opacity: 1, width: '100%' }} 
             transition={{ duration: 0.8}} 
-            className="absolute w-full h-full before:content-[''] before:absolute before:left-[-250%] before:w-[300%] before:h-full before:bg-[#a2c2dd] before:rounded-[150px] before:z-[1]"
+            className="absolute w-full h-full before:content-[''] before:absolute before:right-[-250%] before:w-[300%] before:h-full before:bg-[#a2c2dd] before:rounded-[150px] "
           >
             <motion.div 
               initial={{opacity: 0, width: '0%'}} 
               animate={{ opacity: 1, width: '50%'}} 
               transition={{ duration: 0.8}} 
-              className='w-1/2 h-full absolute bg-[#a2c2dd] flex justify-center space-y-4 flex-col items-center text-center rounded-[150px] z-[1] right-0'
+              className=' w-1/2 h-full absolute bg-[#a2c2dd] flex justify-center space-y-4 flex-col items-center text-center rounded-[150px] z-[2]'
             >
               <motion.h1 
                 initial={{opacity: 0, x: 100}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1 }} 
-                className="text-2xl font-bold text-[#ffffff] text-shadow"
+                className="text-2xl modamFont  text-[#ffffff] text-shadow"
               >
                 خوش آمدید!
               </motion.h1>
@@ -58,7 +65,7 @@ function SignUp({ onClose }) {
                 initial={{opacity: 0, x: 100}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1.2 }}  
-                className="mb-[20px] text-[#44505a] text-sm"
+                className="mb-[20px] text-[#44505a] text-sm modamFont "
               >
                 قبلاً حساب کاربری دارید؟
               </motion.p>
@@ -66,7 +73,7 @@ function SignUp({ onClose }) {
                 initial={{opacity: 0, x: 100}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1.4}} 
-                className='cursor-pointer text-[#eaebf4] py-1 px-[40px] rounded-lg bg-[#1b4fbfcb] hover:bg-green-500 duration-300' 
+                className='cursor-pointer text-[#eaebf4] py-1 px-[40px] modamFont  rounded-lg bg-[#1b4fbfcb] hover:bg-green-500 duration-300' 
                 onClick={toLogin}
               >
                 ورود
@@ -81,7 +88,7 @@ function SignUp({ onClose }) {
               initial={{opacity: 0, x: -50}} 
               animate={{opacity: 1, x: 0}} 
               transition={{ duration: 0.6, delay: 1.6}} 
-              className='text-2xl font-bold mb-[-10] mt-[-10] mx-0 text-[#364a68]'
+              className='text-2xl modamFont  mb-[-10] mt-[-10] mx-0 text-[#364a68]'
             >
               ثبت نام
             </motion.h1>
@@ -91,7 +98,7 @@ function SignUp({ onClose }) {
                 initial={{opacity: 0, x: -50}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1.7}}
-                className="text-red-500 text-sm mb-2"
+                className="text-red-500 text-sm mb-2 modamFont "
               >
                 {error.message}
               </motion.div>
@@ -102,7 +109,7 @@ function SignUp({ onClose }) {
                 initial={{opacity: 0, x: -50}} 
                 animate={{opacity: 1, x: 0}} 
                 transition={{ duration: 0.6, delay: 1.7}}
-                className="text-green-500 text-sm mb-2"
+                className="text-green-500 text-sm mb-2 modamFont "
               >
                 ثبت نام با موفقیت انجام شد!
               </motion.div>
@@ -126,9 +133,9 @@ function SignUp({ onClose }) {
                   }
                 })}
               />
-              <i className='fa-solid fa-user absolute right-[20px] bg-stone-100 top-1/3 text-zinc-400 text-sm'></i>
+              <FaUserTie className="absolute mt-[-10%] text-xl text-zinc-400 mr-[89%]"/>
               {errors.name && (
-                <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
+                <p className="text-red-500 text-xs mt-1 modamFont ">{errors.name.message}</p>
               )}
             </motion.div>
 
@@ -140,7 +147,7 @@ function SignUp({ onClose }) {
             >
               <input 
                 type="email" 
-                className='w-full p-[13px] bg-stone-100 rounded-xl border-0 text-sm font-bold'  
+                className='w-full p-[13px] bg-stone-100 rounded-xl border-0 text-sm modamFont '  
                 placeholder='ایمیل'
                 {...register("email", {
                   required: "ایمیل الزامی است",
@@ -150,9 +157,9 @@ function SignUp({ onClose }) {
                   }
                 })}
               />
-              <i className='fa-solid fa-envelope absolute right-[20px] bg-stone-100 top-1/3 text-zinc-400 text-sm'></i>
+              <MdOutlineMailOutline className="absolute mt-[-10%] text-xl text-zinc-400 mr-[89%]"/>
               {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
+                <p className="text-red-500 text-xs mt-1 modamFont ">{errors.email.message}</p>
               )}
             </motion.div>
 
@@ -164,7 +171,7 @@ function SignUp({ onClose }) {
             >
               <input 
                 type="tel" 
-                className='w-full p-[13px] bg-stone-100 rounded-xl border-0 text-sm font-bold'  
+                className='w-full p-[13px] bg-stone-100 rounded-xl border-0 text-sm modamFont text-right'  
                 placeholder='شماره تلفن'
                 {...register("phone", {
                   required: "شماره تلفن الزامی است",
@@ -182,9 +189,9 @@ function SignUp({ onClose }) {
                   }
                 })}
               />
-              <i className='fa-solid fa-phone absolute right-[20px] bg-stone-100 top-1/3 text-zinc-400 text-sm'></i>
+              <FaPhone className="absolute mt-[-10%] text-lg text-zinc-400 mr-[89%]"/>
               {errors.phone && (
-                <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
+                <p className="text-red-500 text-xs mt-1 modamFont ">{errors.phone.message}</p>
               )}
             </motion.div>
 
@@ -196,7 +203,7 @@ function SignUp({ onClose }) {
             >
               <input 
                 type="password" 
-                className='w-full p-[13px] bg-stone-100 rounded-xl border-0 text-sm font-bold'  
+                className='w-full p-[13px] bg-stone-100 rounded-xl border-0 text-sm modamFont '  
                 placeholder='رمز عبور'
                 {...register("password", {
                   required: "رمز عبور الزامی است",
@@ -206,9 +213,9 @@ function SignUp({ onClose }) {
                   }
                 })}
               />
-              <i className='fa-solid fa-lock absolute right-[20px] bg-stone-100 top-1/3 text-zinc-400 text-sm'></i>
+              <IoIosUnlock className="absolute mt-[-10%] text-xl text-zinc-400 mr-[89%]"/>
               {errors.password && (
-                <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>
+                <p className="text-red-500 text-xs mt-1 modamFont ">{errors.password.message}</p>
               )}
             </motion.div>
 
@@ -216,7 +223,7 @@ function SignUp({ onClose }) {
               initial={{opacity: 0, x: -50}} 
               animate={{opacity: 1, x: 0}} 
               transition={{ duration: 0.6, delay: 2.2}} 
-              className='w-full bg-[#1b4fbfcb] h-10 font-bold rounded-xl text-[#fcfeff] cursor-pointer hover:opacity-70 hover:scale-105 duration-300 btn-shadow mt-[15px]'
+              className='w-full bg-[#1b4fbfcb] h-10 modamFont  rounded-xl text-[#fcfeff] cursor-pointer hover:opacity-70 hover:scale-105 duration-300 btn-shadow mt-[15px]'
               disabled={isPending}
             >
               {isPending ? (
