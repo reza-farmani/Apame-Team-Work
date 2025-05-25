@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-/* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
-
 function MainNav() {
   const [hoveredItem, setHoveredItem] = useState(null);
 
@@ -160,7 +158,7 @@ function MainNav() {
               </NavLink>
             ) : (
               <div
-                className={`flex items-center px-[6px] py-[6px] rounded cursor-pointer duration-300 bg-green-300 ${
+                className={`flex items-center px-[6px] py-[6px] rounded cursor-pointer duration-300 ${
                   hoveredItem === (item.to || item.text) ? 'text-gray-800 hover:bg-[#eef4f9] rounded-2xl' : 'text-[#040911]'
                 }`}
               >
@@ -180,7 +178,12 @@ function MainNav() {
             )}
 
             {hoveredItem === (item.to || item.text) && item.subItems.length > 0 && (
-              <div className={`absolute mt-[26%] top-[26%] w-56 bg-[#dde9f3] border border-gray-200 rounded-md shadow-lg z-50 py-1`}>
+              <div className={`absolute ${
+                   item.text === "عکاسی و فیلمبرداری" ? "top-[110%]" : "top-[100%]"
+                  } w-56 bg-[#dde9f3] border border-gray-200 rounded-md shadow-lg z-50 py-1`}
+                  style={{
+                  transform: item.text === "عکاسی و فیلمبرداری" ? "translateY(-5px)" : "none"
+                 }}>
                 {item.subItems.map((subItem) => (
                   <NavLink
                     key={subItem.to}
