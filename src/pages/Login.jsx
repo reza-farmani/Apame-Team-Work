@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaUserTie } from "react-icons/fa";
 import { IoIosUnlock } from "react-icons/io";
+import { GiExitDoor } from "react-icons/gi";
 
 /* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
 
@@ -31,6 +32,10 @@ function Login({ onClose }) {
 
   function onSubmit(data) {
     mutate(data);
+  }
+
+  function handelClose() {
+    window.location.href = "/dashboard";
   }
 
   return (
@@ -195,6 +200,11 @@ function Login({ onClose }) {
                 "ورود به حساب"
               )}
             </motion.button>
+
+            <div className="flex absolute mt-[13%] mr-[26%]">
+              <p className="modamFont text-[13px] text-gray-500 cursor-pointer hover:text-red-900 duration-300" onClick={handelClose}>خروج از صفحه ورود</p>
+              <GiExitDoor className="text-gray-700"/>
+            </div>
           </form>
         </div>
       </div>

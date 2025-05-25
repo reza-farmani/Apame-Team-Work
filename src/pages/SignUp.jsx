@@ -7,8 +7,9 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { FaUserTie } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { IoIosUnlock } from "react-icons/io";
+import { GiExitDoor } from "react-icons/gi";
 
-/* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
+
 
 
 function SignUp({ onClose }) {
@@ -35,6 +36,10 @@ function SignUp({ onClose }) {
   }
   function onSubmit(data) {
     mutate(data);
+  }
+
+  function handelClose() {
+    window.location.href = "/dashboard";
   }
 
   return (
@@ -254,6 +259,10 @@ function SignUp({ onClose }) {
                 "ثبت نام"
               )}
             </motion.button>
+            <div className="flex absolute mt-[13%] mr-[26%]">
+              <p className="modamFont text-[13px] text-gray-500 cursor-pointer hover:text-red-900 duration-300" onClick={handelClose}>خروج از صفحه ثبت نام</p>
+              <GiExitDoor className="text-gray-700"/>
+            </div>
           </form>
         </div>
       </div>
