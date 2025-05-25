@@ -9,6 +9,11 @@
     font-family: peyda-normal;
     src: url(./font/Peyda-Medium[@fontbazi].ttf);
   }
+
+  @font-face {
+    font-family: modam;
+    src: url(./font/ModamFaNum-Bold.ttf);
+  }
   
   *{
     box-sizing: border-box;
@@ -29,6 +34,10 @@
   .fontBold{
     font-size: 16px;
     font-family: peyda-bold;
+  }
+
+  .modamFont {
+    font-family: modam;
   }
   
   h1, h2, h2, button{
