@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaUserTie } from "react-icons/fa";
 import { IoIosUnlock } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 
 /* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
 
@@ -49,6 +50,9 @@ function Login({ onClose }) {
               transition={{ duration: 0.8}} 
               className='w-1/2 h-full absolute bg-[#a2c2dd] flex justify-center space-y-4 flex-col items-center text-center rounded-[150px] z-[2] left-0'
             >
+              <button className="absolute bg-gray-400 mr-[86%] mt-[-112.5%] rounded-tl-3xl rounded-br-lg w-10 h-10 flex items-center justify-center">
+              <IoClose className="text-2xl"/>
+              </button>
               <motion.h1 
                 initial={{opacity: 0, x: -100}} 
                 animate={{opacity: 1, x: 0}} 
