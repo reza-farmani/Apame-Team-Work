@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
 import Dashboard from './pages/Dashboard';
@@ -5,7 +6,6 @@ import Account from './pages/Account';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import AppLayout from './ui/AppLayout';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Offset from './features/prints/Offset';
 import Lazer from './features/board/Lazer';
 import Cut from './features/board/Cut';
@@ -13,6 +13,9 @@ import Login from './pages/Login';
 import SignUp from './pages/signUp';
 import Order from './pages/Order';
 import VisitCard from './features/prints/offsetsub/VisiteCard';
+import Digitalp from './features/prints/Digitalp';
+import Sublimission from './features/prints/Sublimission';
+import AfterPrint from './features/prints/AfterPrint';
 //import Print from './ui/Print';
 //import Web from './ui/Web';
 //import SocialMedia from './ui/SocialMedia';
@@ -36,6 +39,9 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/offset-services" element={<Offset />} />
             <Route path="/visitcard" element={<VisitCard />} />
+            <Route path="/digprint-services" element={<Digitalp />} />
+            <Route path="/sublimition-services" element={<Sublimission />} />
+            <Route path="/after-printing" element={<AfterPrint />} />
             <Route path="/lazer-services" element={<Lazer />} />
             <Route path="/cut-services" element={<Cut />} />
             <Route path="/order" element={<Order />} />

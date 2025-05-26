@@ -61,7 +61,26 @@ export async function getProducts() {
 }
 
 export async function getVisitCard() {
-  const res = await fetch(`${API_URL}/visitcard`);
+  const res = await fetch(`${API_URL}/visitCard`);
   return res.json();
 }
 
+export async function getDigitalp() {
+  const res = await fetch(`${API_URL}/digitalPrinting`);
+  return res.json();
+}
+
+export async function getSublimission() {
+  const res = await fetch(`${API_URL}/sublimissionPrinting`);
+  return res.json();
+}
+
+export async function getAfterPrint() {
+  const res = await fetch(`${API_URL}/afterPrinting`);
+  return res.json();
+}
+
+export async function getWebDesign() {
+  const res = await fetch(`${API_URL}/webDesignServices`);
+  return res.json();
+}
