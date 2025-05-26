@@ -1,22 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
 import { getVisitCard } from "../../../server/services/api";
 import Spinner from "../../../ui/Spinner";
 
 function VisitCard() {
-  const { optionId } = useParams();
 
   const {
     data: options,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['visitCard', optionId],
-    queryFn: getVisitCard(optionId),
+    queryKey: ['visitCard'],
+    queryFn: getVisitCard,
   });
 
   if (isLoading) return <Spinner />;
-  if (error) return <div className="text-center py-10 text-red-500">خطا در دریافت گزینه‌ها</div>;
+  if (error) return <div className="text-center py-10 text-red-500">خطا در دریافت داده ها</div>;
 
   return (
     <div className="p-4">

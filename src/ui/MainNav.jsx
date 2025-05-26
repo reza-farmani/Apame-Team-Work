@@ -133,7 +133,7 @@ function MainNav() {
       click: true
     }
   ];
-
+   
   return (
     <nav className="">
       <div className='w-[73%] h-16 rounded-b-2xl bg-[#A9C7E1] m-auto flex items-center justify-evenly'>
