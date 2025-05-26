@@ -34,6 +34,13 @@
       "email": "rostam@gmail.com",
       "phone": "09885632147",
       "password": "741852963"
+    },
+    {
+      "id": "752d",
+      "name": "gre",
+      "email": "ereheh@gmail.com",
+      "phone": "0123456789",
+      "password": "6386896"
     }
   ],
   "services": [
@@ -106,7 +113,7 @@
     {
       "id": "5",
       "name": "خدمات بعد از چاپ",
-      "sub": "print-services"
+      "sub": "after-printing"
     },
     {
       "id": "6",
@@ -132,63 +139,161 @@
   "offsetPrintingOptions": [
     {
       "id": "101",
-      "name": "کارت ویزیت",
-      "visitCardOptions": ["1", "2", "3", "4", "5", "6"]
+      "name": "کارت ویزیت"
     },
     {
       "id": "102",
-      "name": "تراکت",
-      "relatedOptions": "visitCard"
+      "name": "تراکت"
     },
     {
       "id": "103",
-      "name": "سربرگ",
-      "relatedOptions": "visitCard"
+      "name": "سربرگ"
     },
     {
       "id": "104",
-      "name": "بروشور",
-      "relatedOptions": "visitCard"
+      "name": "بروشور"
     },
     {
       "id": "105",
-      "name": "ست اداری",
-      "relatedOptions": "visitCard"
+      "name": "ست اداری"
     },
     {
       "id": "106",
-      "name": "لیبل",
-      "relatedOptions": "visitCard"
+      "name": "لیبل"
     },
     {
       "id": "107",
-      "name": "بگ کاغذی",
-      "relatedOptions": "visitCard"
+      "name": "بگ کاغذی"
     },
     {
       "id": "108",
-      "name": "فولدر",
-      "relatedOptions": "visitCard"
+      "name": "فولدر"
     },
     {
       "id": "109",
-      "name": "ظرف غذا",
-      "relatedOptions": "visitCard"
+      "name": "ظرف غذا"
     },
     {
       "id": "110",
-      "name": "پوستر",
-      "relatedOptions": "visitCard"
+      "name": "پوستر"
     },
     {
       "id": "111",
-      "name": "فاکتور",
-      "relatedOptions": "visitCard"
+      "name": "فاکتور"
     },
     {
       "id": "112",
-      "name": "پاکت",
-      "relatedOptions": "visitCard"
+      "name": "پاکت"
+    }
+  ],
+    "digitalPrinting": [
+    {
+      "id": "101",
+      "name": "پرینت سیاه سفید"
+    },
+    {
+      "id": "102",
+      "name": "پرینت رنگی"
+    },
+    {
+      "id": "103",
+      "name": "اکوسالونت"
+    },
+    {
+      "id": "104",
+      "name": "پلاتر"
+    },
+    {
+      "id": "105",
+      "name": "چاپ بک لایت"
+    },
+    {
+      "id": "106",
+      "name": "چاپ تحریر"
+    },
+    {
+      "id": "107",
+      "name": "کاغذ دیواری"
+    },
+    {
+      "id": "108",
+      "name": "استیکر"
+    },
+    {
+      "id": "109",
+      "name": "بوم"
+    },
+    {
+      "id": "110",
+      "name": "فلکسی"
+    },
+    {
+      "id": "111",
+      "name": "بنر"
+    },
+    {
+      "id": "112",
+      "name": "مش"
+    }
+  ],
+    "sublimissionPrinting": [
+    {
+      "id": "101",
+      "name": "قاب عکس"
+    },
+    {
+      "id": "102",
+      "name": "ست اداری"
+    },
+    {
+      "id": "103",
+      "name": "پازل"
+    },
+    {
+      "id": "104",
+      "name": "چاپ"
+    },
+    {
+      "id": "105",
+      "name": "DTF پارچه"
+    },
+    {
+      "id": "106",
+      "name": "پازل"
+    },
+    {
+      "id": "107",
+      "name": "سلفون"
+    },
+    {
+      "id": "108",
+      "name": "پرچم"
+    }
+  ],
+     "afterPrinting": [
+    {
+      "id": "101",
+      "name": "لمینت"
+    },
+    {
+      "id": "102",
+      "name": "یو وی"
+    },
+    {
+      "id": "103",
+      "name": "طلا کوب"
+    },
+    {
+      "id": "104",
+      "name": "نقره کوب"
+    },
+    {
+      "id": "105",
+      "name": "موضعی"
+    },
+    {
+      "id": "106",
+      "name": "سلفون"
     }
   ],
   "digitalPrint": [
@@ -266,41 +371,55 @@
     }
   ],
   "webServices": [
-    {
+     {
       "id": "1",
-      "name": "طراحی UI & UX"
+      "name": "طراحی ui & ux"
     },
     {
       "id": "2",
-      "name": "طراحی رسپانسیو"
+      "name": "طراحی سایت"
     },
     {
       "id": "3",
-      "name": "پشتیبانی رایگان تا 12 ماه"
+      "name": "پشتیبانی سایت"
     },
     {
       "id": "4",
-      "name": "برنامه نویسی کلی صفحات وب"
+      "name": "سئو"
+    }
+  ],
+   "webDesignServices": [
+    {
+      "id": "101",
+      "name": "طراحی سایت"
     },
     {
-      "id": "5",
-      "name": "کدنویسی داشبورد"
+      "id": "102",
+      "name": "مدیریت سایت"
     },
     {
-      "id": "6",
-      "name": "پیاده سازی امکانات دلخواه"
+      "id": "103",
+      "name": "توسعه سایت"
     },
     {
-      "id": "7",
-      "name": "عملکرد قوی و امنیت بالا"
+      "id": "104",
+      "name": "امنیت سایت"
     },
     {
-      "id": "8",
-      "name": "بهینه سازی محتوا"
+      "id": "105",
+      "name": "هاست و دامنه"
     },
     {
-      "id": "9",
-      "name": "اتصال به درگاه های بانکی"
+      "id": "106",
+      "name": "ورود محتوا"
+    },
+    {
+      "id": "107",
+      "name": "آپدیت ساختار سایت"
+    },
+    {
+      "id": "108",
+      "name": "دیباگ سایت"
     }
   ],
   "socialMediaServices": [

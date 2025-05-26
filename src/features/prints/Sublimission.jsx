@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../ui/Spinner";
 import { useNavigate } from 'react-router-dom';
-import { getOffset } from "../../server/services/api";
+import { getSublimission } from "../../server/services/api";
 
-function Offset() {
+function Sublimission() {
   const navigate = useNavigate();
 
   const {
@@ -11,8 +11,8 @@ function Offset() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['offsetServices'],
-    queryFn: getOffset,
+    queryKey: ['sublimissionServices'],
+    queryFn: getSublimission,
   });
 
   if (isLoading) return <Spinner />;
@@ -44,7 +44,7 @@ function Offset() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-6">خدمات چاپ افست</h1>
+      <h1 className="text-2xl font-bold mb-6">خدمات چاپ سابلیمیشن</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {services?.map((service) => (
           <div
@@ -60,4 +60,4 @@ function Offset() {
   );
 }
 
-export default Offset;
+export default Sublimission;
