@@ -16,6 +16,9 @@ import VisitCard from './features/prints/offsetsub/VisiteCard';
 import Digitalp from './features/prints/Digitalp';
 import Sublimission from './features/prints/Sublimission';
 import AfterPrint from './features/prints/AfterPrint';
+import WebDesign from './features/web/WebDesign';
+import Seo from './features/web/Seo';
+import Youtube from './features/socialmedia/Youtube';
 //import Print from './ui/Print';
 //import Web from './ui/Web';
 //import SocialMedia from './ui/SocialMedia';
@@ -42,6 +45,9 @@ function App() {
             <Route path="/digprint-services" element={<Digitalp />} />
             <Route path="/sublimition-services" element={<Sublimission />} />
             <Route path="/after-printing" element={<AfterPrint />} />
+            <Route path="/webdesign-services" element={<WebDesign />} />
+            <Route path="/seo-services" element={<Seo />} />
+            <Route path="/youtube-services" element={<Youtube />} />
             <Route path="/lazer-services" element={<Lazer />} />
             <Route path="/cut-services" element={<Cut />} />
             <Route path="/order" element={<Order />} />

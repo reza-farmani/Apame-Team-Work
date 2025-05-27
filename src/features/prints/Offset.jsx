@@ -33,6 +33,10 @@ function Offset() {
     'پاکت': '/packet'
   };
 
+   /* const handleServiceClick = (service) => {
+    navigate(`/offset-services/${service.id}`);
+    }*/
+
   function handleServiceClick(service) {
     const path = toPathMap[service.name];
     if (path) {
