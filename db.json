@@ -43,6 +43,22 @@
       "password": "6386896"
     }
   ],
+  "subframeOrders": [
+    {
+      "id": 1,
+      "dimensions": "20x30",
+      "frameType": "مستطیل",
+      "material": "چوبی",
+      "notes": "توضیحات اختیاری"
+    },
+    {
+      "dimensions": "20x30",
+      "frameType": "گرد",
+      "material": "پلاستیکی",
+      "notes": "dfghdhh",
+      "id": 2
+    }
+  ],
   "services": [
     {
       "id": "1",
@@ -186,7 +202,7 @@
       "name": "پاکت"
     }
   ],
-    "digitalPrinting": [
+  "digitalPrinting": [
     {
       "id": "101",
       "name": "پرینت سیاه سفید"
@@ -236,7 +252,7 @@
       "name": "مش"
     }
   ],
-    "sublimissionPrinting": [
+  "sublimissionPrinting": [
     {
       "id": "101",
       "name": "قاب عکس"
@@ -270,7 +286,7 @@
       "name": "پرچم"
     }
   ],
-     "afterPrinting": [
+  "afterPrinting": [
     {
       "id": "101",
       "name": "لمینت"
@@ -371,7 +387,7 @@
     }
   ],
   "webServices": [
-     {
+    {
       "id": "1",
       "name": "طراحی ui & ux",
       "sub": "ui & ux-services"
@@ -392,7 +408,7 @@
       "sub": "seo-services"
     }
   ],
-   "webDesignServices": [
+  "webDesignServices": [
     {
       "id": "101",
       "name": "طراحی سایت"
@@ -426,7 +442,7 @@
       "name": "دیباگ سایت"
     }
   ],
-   "seoServices": [
+  "seoServices": [
     {
       "id": "101",
       "name": "آنالیز سئو سایت"
@@ -487,10 +503,10 @@
     {
       "id": "4",
       "name": "اینستاگرام",
-      "sub": "support-services"
+      "sub": "instagram-services"
     }
   ],
-    "youtubeServices": [
+  "youtubeServices": [
     {
       "id": "1",
       "name": "بررسی و آنالیز چنل"
@@ -512,26 +528,34 @@
       "name": "ساخت استراتژی"
     }
   ],
-   "instagramServices": [
+  "instagramServices": [
     {
       "id": "1",
       "name": "آنالیز مداوم پیج"
     },
     {
       "id": "2",
-      "name": "ساخت محتوا"
+      "name": "آنالیز رقبا"
     },
     {
       "id": "3",
-      "name": "فیلم برداری"
+      "name": "اجرای کمپین"
     },
     {
       "id": "4",
-      "name": "تدوین محتوا"
+      "name": "ادمینی"
     },
     {
       "id": "5",
-      "name": "ساخت استراتژی"
+      "name": "گزارش دهی"
+    },
+    {
+      "id": "6",
+      "name": "تدوین استراتژی"
+    },
+    {
+      "id": "7",
+      "name": "تولید محتوا"
     }
   ],
   "boardServices": [

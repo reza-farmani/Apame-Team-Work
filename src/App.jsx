@@ -19,6 +19,8 @@ import AfterPrint from './features/prints/AfterPrint';
 import WebDesign from './features/web/WebDesign';
 import Seo from './features/web/Seo';
 import Youtube from './features/socialmedia/Youtube';
+import Instagram from './features/socialmedia/Instagram';
+import SubFrame from './ui/SubFrame';
 //import Print from './ui/Print';
 //import Web from './ui/Web';
 //import SocialMedia from './ui/SocialMedia';
@@ -48,7 +50,9 @@ function App() {
             <Route path="/webdesign-services" element={<WebDesign />} />
             <Route path="/seo-services" element={<Seo />} />
             <Route path="/youtube-services" element={<Youtube />} />
+            <Route path="/instagram-services" element={<Instagram />} />
             <Route path="/lazer-services" element={<Lazer />} />
+            <Route path="/subframe-form" element={<SubFrame />} />
             <Route path="/cut-services" element={<Cut />} />
             <Route path="/order" element={<Order />} />
           </Route>

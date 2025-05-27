@@ -94,3 +94,8 @@ export async function getYoutubeServices() {
   const res = await fetch(`${API_URL}/youtubeServices`);
   return res.json();
 }
+
+export async function getInstagramServices() {
+  const res = await fetch(`${API_URL}/instagramServices`);
+  return res.json();
+}

@@ -10,9 +10,6 @@ import { CiUnread, CiRead } from "react-icons/ci";
 import { GiExitDoor } from "react-icons/gi";
 import { useState } from "react";
 
-
-
-
 function SignUp({ onClose }) {
   const navigate = useNavigate();
 
