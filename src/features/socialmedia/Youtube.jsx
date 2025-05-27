@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../ui/Spinner";
 import { useNavigate } from 'react-router-dom';
-import { getWebDesign } from "../../server/services/api";
+import { getYoutubeServices } from "../../server/services/api";
 
 
-function WebDesign() {
+function Youtube() {
   const navigate = useNavigate();
 
   const {
@@ -12,8 +12,8 @@ function WebDesign() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['webdesignServices'],
-    queryFn: getWebDesign,
+    queryKey: ['youtubeservices'],
+    queryFn: getYoutubeServices,
   });
 
   if (isLoading) return <Spinner />;
@@ -45,7 +45,7 @@ function WebDesign() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-6">خدمات طراحی سایت</h1>
+      <h1 className="text-2xl font-bold mb-6">خدمات یوتیوب و آپارات</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {services?.map((service) => (
           <div
@@ -61,4 +61,4 @@ function WebDesign() {
   );
 }
 
-export default WebDesign;
+export default Youtube;

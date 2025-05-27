@@ -84,3 +84,13 @@ export async function getWebDesign() {
   const res = await fetch(`${API_URL}/webDesignServices`);
   return res.json();
 }
+
+export async function getSeoServices() {
+  const res = await fetch(`${API_URL}/seoServices`);
+  return res.json();
+}
+
+export async function getYoutubeServices() {
+  const res = await fetch(`${API_URL}/youtubeServices`);
+  return res.json();
+}
