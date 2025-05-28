@@ -99,3 +99,7 @@ export async function getInstagramServices() {
   const res = await fetch(`${API_URL}/instagramServices`);
   return res.json();
 }
+
+export async function getPhotoGraphy() {
+  const res = await fetch(`${API_URL}/photoGraphyServices`)
+}

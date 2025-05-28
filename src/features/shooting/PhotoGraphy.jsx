@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../ui/Spinner";
 import { useNavigate } from 'react-router-dom';
-import { getSublimission } from "../../server/services/api";
+import { getPhotoGraphy } from "../../server/services/api";
 
-function Sublimission() {
+function PhotoGraphy() {
   const navigate = useNavigate();
 
   const {
@@ -11,16 +11,18 @@ function Sublimission() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['sublimissionServices'],
-    queryFn: getSublimission,
+    queryKey: ['photographyservices'],
+    queryFn: getPhotoGraphy,
   });
+
+  console.log(services)
 
   if (isLoading) return <Spinner />;
   if (error) return <div className="text-center py-10 text-red-500">خطا در دریافت خدمات</div>;
 
   const toPathMap = {
-    'قاب عکس': '/subframe-form',
-    'پازل': '/subpuzzle-form',
+    'کارت ویزیت': '/visitcard',
+    'تراکت': '/tracket',
     'سربرگ': '/header',
     'بروشور': '/brochure',
     'ست اداری': '/officeset',
@@ -44,7 +46,7 @@ function Sublimission() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-6">خدمات چاپ سابلیمیشن</h1>
+      <h1 className="text-2xl font-bold mb-6">خدمات عکاسی</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {services?.map((service) => (
           <div
@@ -60,4 +62,4 @@ function Sublimission() {
   );
 }
 
-export default Sublimission;
+export default PhotoGraphy;
