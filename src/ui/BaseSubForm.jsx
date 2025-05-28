@@ -8,7 +8,7 @@ function BaseSubForm({
   mutationFn,
   formFields,
   defaultValues = {},
-  successRedirect = "/",
+  successRedirect ,
 }) {
   const navigate = useNavigate();
 

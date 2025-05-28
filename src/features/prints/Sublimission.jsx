@@ -21,7 +21,7 @@ function Sublimission() {
   const toPathMap = {
     'قاب عکس': '/subframe-form',
     'پازل': '/subpuzzle-form',
-    'سربرگ': '/header',
+    'لیوان': '/subglass-form',
     'بروشور': '/brochure',
     'ست اداری': '/officeset',
     'لیبل': '/lable',
