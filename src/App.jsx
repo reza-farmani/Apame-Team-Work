@@ -20,9 +20,10 @@ import WebDesign from './features/web/WebDesign';
 import Seo from './features/web/Seo';
 import Youtube from './features/socialmedia/Youtube';
 import Instagram from './features/socialmedia/Instagram';
-import SubFrame from './ui/SubFrame';
-import SubPuzzle from './ui/SubPuzzel';
 import PhotoGraphy from './features/shooting/PhotoGraphy';
+import SubFrame from '../orderform/prints/sublimition/SubFrame';
+import SubPuzzle from '../orderform/prints/sublimition/SubPuzzel';
+import SubGlass from '../orderform/prints/sublimition/SubGlass';
 //import Print from './ui/Print';
 //import Web from './ui/Web';
 //import SocialMedia from './ui/SocialMedia';
@@ -57,6 +58,7 @@ function App() {
             <Route path="/lazer-services" element={<Lazer />} />
             <Route path="/subframe-form" element={<SubFrame />} />
             <Route path="/subpuzzle-form" element={<SubPuzzle />} />
+            <Route path="/subglass-form" element={<SubGlass />} />
             <Route path="/cut-services" element={<Cut />} />
             <Route path="/order" element={<Order />} />
           </Route>

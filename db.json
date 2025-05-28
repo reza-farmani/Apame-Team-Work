@@ -55,14 +55,8 @@
       "dimensions": "20x30",
       "frameType": "گرد",
       "material": "پلاستیکی",
-      "notes": "dfghdhh",
+      "notes": "ryjrfyuj",
       "id": 2
-    },
-    {
-      "dimensions": "20x30",
-      "frameType": "قلبی",
-      "notes": "dfhgdhb",
-      "id": 3
     }
   ],
   "subPuzzleOrders": [
@@ -71,6 +65,20 @@
       "dimensions": "20x30",
       "frameType": "مستطیل",
       "notes": "پس توضیحااات"
+    }
+  ],
+  "subGlassOrders": [
+    {
+      "id": 1,
+      "dimensions": "20x30",
+      "frameType": "مستطیل",
+      "notes": "پس توضیحااات"
+    },
+    {
+      "frameType": "دسته قلبی",
+      "material": "فلزی",
+      "notes": "tgukty",
+      "id": 2
     }
   ],
   "services": [
@@ -685,7 +693,7 @@
       "sub": "filming-services"
     }
   ],
-    "photoGraphyServices": [
+  "photoGraphyServices": [
     {
       "id": "1",
       "name": "عکاسی مد"

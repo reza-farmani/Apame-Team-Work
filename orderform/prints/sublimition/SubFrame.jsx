@@ -1,5 +1,5 @@
-import BaseSubForm from './BaseSubForm';
-import { subFrameOrder } from '../server/services/order';
+import BaseSubForm from '../../../src/ui/BaseSubForm';
+import { subFrameOrder } from '../../../src/server/services/order';
 
 const frameTypes = [
   { value: 'گرد', label: 'گرد' },
@@ -48,6 +48,7 @@ function SubFrame({ onClose }) {
       onClose={onClose}
       mutationFn={subFrameOrder}
       formFields={formFields}
+      successRedirect="/frame-buy"
     />
   );
 }
