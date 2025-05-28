@@ -1,5 +1,5 @@
 import BaseSubForm from './BaseSubForm';
-import { subFrameOrder } from '../server/services/order';
+import { subPuzzleOrder } from '../server/services/order';
 
 const frameTypes = [
   { value: 'گرد', label: 'گرد' },
@@ -8,12 +8,7 @@ const frameTypes = [
   { value: 'مربع', label: 'مربع' },
 ];
 
-const materials = [
-  { value: 'پلاستیکی', label: 'پلاستیکی' },
-  { value: 'چوبی', label: 'چوبی' },
-];
-
-function SubFrame({ onClose }) {
+function SubPuzzle({ onClose }) {
   const formFields = [
     {
       name: 'dimensions',
@@ -29,13 +24,6 @@ function SubFrame({ onClose }) {
       validation: { required: "این فیلد الزامی است" }
     },
     {
-      name: 'material',
-      label: 'جنس قاب',
-      type: 'select',
-      options: materials,
-      validation: { required: "این فیلد الزامی است" }
-    },
-    {
       name: 'notes',
       label: 'توضیحات اضافی (اختیاری)',
       type: 'textarea'
@@ -46,10 +34,10 @@ function SubFrame({ onClose }) {
     <BaseSubForm
       title="ثبت سفارش چاپ سابلیمیشن"
       onClose={onClose}
-      mutationFn={subFrameOrder}
+      mutationFn={subPuzzleOrder}
       formFields={formFields}
     />
   );
 }
 
-export default SubFrame;
+export default SubPuzzle;
