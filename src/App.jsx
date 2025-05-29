@@ -21,9 +21,10 @@ import Seo from './features/web/Seo';
 import Youtube from './features/socialmedia/Youtube';
 import Instagram from './features/socialmedia/Instagram';
 import PhotoGraphy from './features/shooting/PhotoGraphy';
-import SubFrame from '../orderform/prints/sublimition/SubFrame';
-import SubPuzzle from '../orderform/prints/sublimition/SubPuzzel';
-import SubGlass from '../orderform/prints/sublimition/SubGlass';
+import SubFrame from './orderform/prints/sublimition/SubFrame'
+import SubPuzzle from './orderform/prints/sublimition/SubPuzzle'
+import SubGlass from './orderform/prints/sublimition/SubGlass'
+
 //import Print from './ui/Print';
 //import Web from './ui/Web';
 //import SocialMedia from './ui/SocialMedia';

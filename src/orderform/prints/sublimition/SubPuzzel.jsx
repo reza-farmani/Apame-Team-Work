@@ -1,5 +1,5 @@
-import BaseSubForm from '../../../src/ui/BaseSubForm';
-import { subPuzzleOrder } from '../../../src/server/services/order';
+import BaseSubForm from '../../../ui/BaseSubForm';
+import { subPuzzleOrder } from '../../../server/services/order';
 
 const frameTypes = [
   { value: 'گرد', label: 'گرد' },
