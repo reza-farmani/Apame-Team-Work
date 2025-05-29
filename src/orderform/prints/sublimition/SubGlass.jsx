@@ -1,5 +1,5 @@
-import BaseSubForm from '../../../src/ui/BaseSubForm';
-import { subGlassOrder } from '../../../src/server/services/order';
+import BaseSubForm from '../../../ui/BaseSubForm';
+import { subGlassOrder } from '../../../server/services/order';
 
 const frameTypes = [
   { value: 'دسته قلبی', label: 'دسته قلبی' },
