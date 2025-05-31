@@ -5,12 +5,17 @@ import ProductSelector from '../features/service/ProductSelector';
 import QuantityPrice from '../features/service/QuantityPrice';
 import AttributesForm from '../features/service/AttributesForm';
 import OrderSummary from '../features/service/OrderSummary';
+import { Product } from '../types/Product'; 
 
+type OrderFormValues = {
+  productId: string;
+  variant?: string;
+  quantity: number;
+};
 
-
- function Order() {
-  const { control, watch, handleSubmit } = useForm();
-  const { data: products } = useQuery({
+function Order() {
+  const { control, watch, handleSubmit } = useForm<OrderFormValues>();
+  const { data: products } = useQuery<Product[]>({
     queryKey: ['products'],
     queryFn: getProducts,
   });
@@ -20,15 +25,15 @@ import OrderSummary from '../features/service/OrderSummary';
 
   const selectedProduct = products?.find(p => p.id === Number(selectedProductId));
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: OrderFormValues) => {
     console.log('سفارش ثبت شد:', data);
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div className="space-y-6">
-        <ProductSelector
-          products={products} 
+        <ProductSelector 
+          products={products || []} 
           control={control} 
         />
         
@@ -41,7 +46,7 @@ import OrderSummary from '../features/service/OrderSummary';
             />
             
             <AttributesForm
-              attributes={selectedProduct.productAttributes} 
+              attributes={selectedProduct.productAttributes || []} 
               control={control} 
             />
           </>

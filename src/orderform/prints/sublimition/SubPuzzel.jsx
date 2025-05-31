@@ -8,7 +8,7 @@ const frameTypes = [
   { value: 'مربع', label: 'مربع' },
 ];
 
-function SubPuzzle({ onClose }) {
+function SubPuzzle() {
   const formFields = [
     {
       name: 'dimensions',
@@ -33,7 +33,7 @@ function SubPuzzle({ onClose }) {
   return (
     <BaseSubForm
       title="ثبت سفارش چاپ سابلیمیشن"
-      onClose={onClose}
+     // onClose={onClose}
       mutationFn={subPuzzleOrder}
       formFields={formFields}
     />

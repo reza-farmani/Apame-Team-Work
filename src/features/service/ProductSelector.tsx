@@ -1,6 +1,17 @@
-import { Controller } from 'react-hook-form';
+import { Controller, useWatch, Control } from 'react-hook-form';
+import { Product } from '../../types/Product';
 
- function ProductSelector({ products, control }) {
+interface ProductSelectorProps {
+  products: Product[];
+  control: Control<any>;
+}
+
+function ProductSelector({ products, control }: ProductSelectorProps) {
+  const selectedProductId = useWatch({
+    control,
+    name: 'productId'
+  });
+
   return (
     <div className="space-y-4">
       <h3 className="text-lg font-bold">انتخاب محصول</h3>
@@ -15,7 +26,7 @@ import { Controller } from 'react-hook-form';
             className="w-full p-3 border rounded"
           >
             <option value="">محصول را انتخاب کنید</option>
-            {products?.map(product => (
+            {products.map(product => (
               <option key={product.id} value={product.id}>
                 {product.productName} ({product.productCode})
               </option>
@@ -27,23 +38,22 @@ import { Controller } from 'react-hook-form';
       <Controller
         name="variant"
         control={control}
-        render={({ field }) => (
-          products?.find(p => p.id === Number(field.value?.productId))?.productVariants && (
+        render={({ field }) => {
+          const product = products.find(p => p.id === Number(selectedProductId));
+          return product?.productVariants ? (
             <select 
               {...field} 
               className="w-full p-3 border rounded"
             >
               <option value="">واریانت را انتخاب کنید (اختیاری)</option>
-              {products
-                .find(p => p.id === Number(field.value?.productId))
-                ?.productVariants?.map(variant => (
-                  <option key={variant.variant} value={variant.variant}>
-                    {variant.variant}
-                  </option>
-                ))}
+              {product.productVariants.map(variant => (
+                <option key={variant.variant} value={variant.variant}>
+                  {variant.variant}
+                </option>
+              ))}
             </select>
-          )
-        )}
+          ) : null;
+        }}
       />
     </div>
   );
