@@ -13,7 +13,7 @@ const materials = [
   { value: 'چوبی', label: 'چوبی' },
 ];
 
-function SubFrame({ onClose }) {
+function SubFrame() {
   const formFields = [
     {
       name: 'dimensions',
@@ -45,7 +45,7 @@ function SubFrame({ onClose }) {
   return (
     <BaseSubForm
       title="ثبت سفارش چاپ سابلیمیشن"
-      onClose={onClose}
+      //onClose={onClose}
       mutationFn={subFrameOrder}
       formFields={formFields}
       successRedirect="/frame-buy"

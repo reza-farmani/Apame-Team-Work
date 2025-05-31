@@ -8,9 +8,8 @@ import { CiUnread, CiRead } from "react-icons/ci";
 import { GiExitDoor } from "react-icons/gi";
 import { useState } from "react";
 
-/* dhdfhdfhdfhdfhdfh dfh d    Test Good   dfgfsdgsfgfgmskdfgkdsjgkodsjkgojdsklgjdsklojmgkods, */ 
 
-function Login({ onClose }) {
+function Login() {
 
   const navigate = useNavigate();
 
@@ -27,7 +26,7 @@ function Login({ onClose }) {
     onSuccess: (user) => {
       localStorage.setItem('user', JSON.stringify(user));
       navigate("/"); 
-      onClose();
+      //onClose();
     },
   });
 

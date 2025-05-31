@@ -12,7 +12,7 @@ const materials = [
   { value: 'فاور سنت', label: 'فاور سنت' },
 ];
 
-function SubGlass({ onClose }) {
+function SubGlass() {
   const formFields = [
     {
       name: 'frameType',
@@ -38,7 +38,7 @@ function SubGlass({ onClose }) {
   return (
     <BaseSubForm
       title="ثبت سفارش چاپ سابلیمیشن"
-      onClose={onClose}
+      //onClose={onClose}
       mutationFn={subGlassOrder}
       formFields={formFields}
     />
